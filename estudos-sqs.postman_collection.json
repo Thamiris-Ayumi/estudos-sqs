@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "83a70106-5de2-48bd-baa9-6a10b217c0cc",
+		"name": "estudos-sqs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28559838"
+	},
+	"item": [
+		{
+			"name": "Criar filas SQS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Action",
+							"value": "ListQueues",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4566",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar mensagem para fila compra_cartao_credito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Action",
+							"value": "SendMessage",
+							"type": "text"
+						},
+						{
+							"key": "MessageBody",
+							"value": "{\"numeroCartao\": 123456478910, \"valor\": 543.00}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4566/000000000000/compra_cartao_credito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"000000000000",
+						"compra_cartao_credito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enviar mensagem para fila compra_cartao_credito_aprovada",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Action",
+							"value": "SendMessage",
+							"type": "text"
+						},
+						{
+							"key": "MessageBody",
+							"value": "{\"numeroPedido\": 987654, \"status\": \"Aprovado\"}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4566/000000000000/compra_cartao_credito_aprovada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"000000000000",
+						"compra_cartao_credito_aprovada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar mensagem enviada para compra_cartao_credito",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Action",
+							"value": "ReceiveMessage",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4566/000000000000/compra_cartao_credito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"000000000000",
+						"compra_cartao_credito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar mensagem enviada para compra_cartao_credito_aprovada",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Action",
+							"value": "ReceiveMessage",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4566/000000000000/compra_cartao_credito_aprovada",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4566",
+					"path": [
+						"000000000000",
+						"compra_cartao_credito_aprovada"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
