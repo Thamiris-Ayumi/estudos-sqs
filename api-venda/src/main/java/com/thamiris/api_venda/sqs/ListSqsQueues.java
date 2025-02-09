@@ -1,4 +1,4 @@
-package sqs;
+package com.thamiris.api_venda.sqs;
 
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
