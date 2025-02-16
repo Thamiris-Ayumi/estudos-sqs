@@ -1,6 +1,6 @@
 # Arquitetura do projeto
 
-Teconologias utilizadas:
+Tecnologias utilizadas:
 
 - Spring Boot
 - AWS SQS local (Simple Queue Service)
